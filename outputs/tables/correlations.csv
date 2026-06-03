@@ -1,0 +1,7 @@
+region,analysis,figure,filename,n_countries,r,r2,p_value
+LATIN AMERICA AND CARIBBEAN,1,1,fig01_analysis1_latam.png,33,0.2286,0.0523,0.2007
+LATIN AMERICA AND CARIBBEAN,2,2,fig02_analysis2_latam.png,33,-0.3175,0.1008,0.0718
+LATIN AMERICA AND CARIBBEAN,3,3,fig03_analysis3_latam.png,33,-0.2722,0.0741,0.1254
+EAST ASIAN AND PACIFIC,1,4,fig04_analysis1_eap.png,32,0.319,0.1018,0.0751
+EAST ASIAN AND PACIFIC,2,5,fig05_analysis2_eap.png,32,-0.3124,0.0976,0.0817
+EAST ASIAN AND PACIFIC,3,6,fig06_analysis3_eap.png,32,0.1454,0.0212,0.427
