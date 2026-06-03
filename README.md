@@ -59,12 +59,6 @@ python src/main.py
 python src/main.py --regions "LATIN AMERICA AND CARIBBEAN" "EAST ASIAN AND PACIFIC"
 ```
 
-### 4. Especificar outro arquivo de dados
-
-```bash
-python src/main.py --data caminho/para/world_data.xlsx
-```
-
 ---
 
 ## Dados
