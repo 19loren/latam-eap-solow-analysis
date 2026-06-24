@@ -4,71 +4,151 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solow Model Analysis -- LATAM & EAP</title>
-</head>
-<body>
 
-  <header>
-    <nav>
-      <a href="#hero">Solow Model Analysis</a>
-      <ul>
-        <li><a href="#problem">Overview</a></li>
-        <li><a href="#hypothesis-1">Hypothesis 1</a></li>
-        <li><a href="#hypothesis-2">Hypothesis 2</a></li>
-        <li><a href="#hypothesis-3">Hypothesis 3</a></li>
-        <li><a href="#comparison">Comparison</a></li>
-        <li><a href="#conclusion">Conclusion</a></li>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              800: '#13294B',
+              900: '#0B1B2E',
+            },
+            gold: {
+              400: '#C9A227',
+            },
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-stone-50 text-slate-800 font-sans">
+
+  <header class="sticky top-0 z-50 bg-navy-900/95 text-white backdrop-blur">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#hero" class="font-serif text-lg tracking-wide">Solow Model Analysis</a>
+      <ul class=hidden md:flex gap-8 text-xs uppercase tracking-widest text-white/80>
+        <li><a href="#problem" class="hover:text-gold-400 transition-colors">Overview</a></li>
+        <li><a href="#hypothesis-1" class="hover:text-gold-400 transition-colors">Hypothesis 1</a></li>
+        <li><a href="#hypothesis-2" class="hover:text-gold-400 transition-colors">Hypothesis 2</a></li>
+        <li><a href="#hypothesis-3" class="hover:text-gold-400 transition-colors">Hypothesis 3</a></li>
+        <li><a href="#comparison" class="hover:text-gold-400 transition-colors">Comparison</a></li>
+        <li><a href="#conclusion" class="hover:text-gold-400 transition-colors">Conclusion</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
 
-    <section id="hero">
-      <h1>The Solow Model</h1>
-      <p>A Comparative Analysis of Latin America &amp; Caribbean and East Asia &amp; Pacific</p>
-      <span>1990 – 2024</span>
+    <section id="hero" class="relative bg-navy-900 text-white min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <h1 class="font-serif text-5xl md:text-7xl tracking-wide mb-6">The Solow Model</h1>
+      <p class="text-sm md:text-base text-gold-400 uppercase tracking-widest mb-2">A Comparative Analysis of</p>
+      <p class="font-serif text-2xl md:text-3xl mb-1">Latin America &amp; Caribbean</p>
+      <p class="font-serif text-2xl md:text-3xl mb-8">and East Asia &amp; Pacific</p>
+      <span class="text-sm tracking-widest text-gold-400 border-t border-gold-400/40 pt-4">1990 – 2024</span>
+      <div class="absolute bottom-8 text-xs uppercase tracking-widest text-white/60 animate-bounce">
+        Scroll to explore
+      </div> 
     </section>
 
-    <section id="problem">
-      <h2>01 · The Problem</h2>
-      <p>
-        The Solow Model predicts that economies with higher investment, lower
-        population growth, and lower initial income should grow faster and
-        converge toward the steady state of income per capita.
-      </p>
-      <p>Do the data support these predictions for LATAM and EAP?</p>
+    <section id="problem" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
+   <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-      <div>
-        <h3>Investment and Income</h3>
-        <p>Does higher investment relate to higher income per capita?</p>
-      </div>
-      <div>
-        <h3>Income Convergence</h3>
-        <p>Do poorer economies grow faster than richer ones?</p>
-      </div>
-      <div>
-        <h3>Population Growth and Income</h3>
-        <p>Does lower population growth relate to higher income per capita?</p>
+        <div>
+          <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">01</span>
+          <h2 class="font-serif text-3xl text-navy-900 mb-6">The Problem</h2>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            The Solow Model predicts that economies with higher investment, lower
+            population growth, and lower initial income should grow faster and
+            converge toward the steady state of income per capita.
+          </p>
+          <p class="font-semibold text-navy-900">
+            Do the data support these predictions for LATAM and EAP?
+          </p>
+        </div>
+
+        <div class="bg-stone-100 rounded-lg p-8 border border-stone-200">
+          <p class="text-xs uppercase tracking-widest text-slate-500 mb-6">What we test</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+
+            <div>
+              <svg class="w-8 h-8 mx-auto mb-3 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <ellipse cx="12" cy="6" rx="7" ry="3"/>
+                <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/>
+                <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/>
+              </svg>
+              <h3 class="font-semibold text-sm text-navy-900 mb-1">Investment and Income</h3>
+              <p class="text-xs text-slate-500">Does higher investment relate to higher income per capita?</p>
+            </div>
+
+            <div>
+              <svg class="w-8 h-8 mx-auto mb-3 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M4 12a8 8 0 0 1 14-5.3M20 4v3.5h-3.5"/>
+                <path d="M20 12a8 8 0 0 1-14 5.3M4 20v-3.5h3.5"/>
+              </svg>
+              <h3 class="font-semibold text-sm text-navy-900 mb-1">Income Convergence</h3>
+              <p class="text-xs text-slate-500">Do poorer economies grow faster than richer ones?</p>
+            </div>
+
+            <div>
+              <svg class="w-8 h-8 mx-auto mb-3 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="9" cy="7" r="3"/>
+                <circle cx="17" cy="9" r="2.3"/>
+                <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/>
+                <path d="M14.5 14.5c2.3 0.3 4 2 4 4.5"/>
+              </svg>
+              <h3 class="font-semibold text-sm text-navy-900 mb-1">Population Growth and Income</h3>
+              <p class="text-xs text-slate-500">Does lower population growth relate to higher income per capita?</p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
  
-    <section id="regions">
-      <h2>02 · The Regions</h2>
-      <p>We compare two regions with different development trajectories.</p>
+    <section id="regions" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
+      <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">02</span>
+      <h2 class="font-serif text-3xl text-navy-900 mb-4">02 · The Regions</h2>
+      <p class="text-slate-600 mb-10 max-w-2xl">We compare two regions with different development trajectories.
+      </p>
 
-      <div>
-        <h3>Latin America &amp; Caribbean (LAC)</h3>
-        <ul>
-          <li>32 economies with complete data</li>
-          <li>Rich in natural resources</li>
-        </ul>
-      </div>
-      <div>
-        <h3>East Asia &amp; Pacific (EAP)</h3>
-        <ul>
-          <li>31 economies with complete data</li>
-          <li>High savings and investment</li>
-        </ul>
+      <<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <div class="border border-stone-200 rounded-lg overflow-hidden">
+          <div class="h-1.5 bg-navy-900"></div>
+          <div class="p-8">
+            <h3 class="font-serif text-xl text-navy-900 mb-4">Latin America &amp; Caribbean (LAC)</h3>
+            <ul class="space-y-2 text-slate-600 text-sm">
+              <li>32 economies with complete data</li>
+              <li>~ 660 million people</li>
+              <li>Rich in natural resources</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border border-stone-200 rounded-lg overflow-hidden">
+          <div class="h-1.5 bg-gold-400"></div>
+          <div class="p-8">
+            <h3 class="font-serif text-xl text-navy-900 mb-4">East Asia &amp; Pacific (EAP)</h3>
+            <ul class="space-y-2 text-slate-600 text-sm">
+              <li>31 economies with complete data</li>
+              <li>~ 2.4 billion people</li>
+              <li>High savings and investment</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </section>
 
