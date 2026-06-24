@@ -17,6 +17,7 @@ Three analyses are carried out for **two geographic groupings**:
 |1| Investment and Income | Gross Capital Formation (% GDP) – 1990–2024 average | GDP per capita PPP (current) | Mankiw Fig. 8-6 |
 |2| Income Convergence | GDP per capita PPP, constant – 1999 | Average GDP per capita growth – 1990–2017 | Blanchard Fig. 10.2|
 |3| Population Growth and Income | Average population growth – 1990–2024 | GDP per capita PPP (current) | Mankiw Fig. 8-13 |
+
 ---
 
 ## Project Structure
