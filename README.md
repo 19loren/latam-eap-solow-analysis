@@ -1,87 +1,77 @@
 # Solow Model – World Bank Analysis
 
-Projeto Integrador | Macroeconomia III · Estatística Econômica  
-Escola de Economia e Negócios — Ciências Econômicas
+Integrative Project | Macroeconomics III · Economic Statistics  
+School of Economics and Business — Economics
 
 ---
 
-## Objetivo
+## Objective
 
-Avaliar se o **Modelo de Solow** consegue explicar o desempenho econômico de países,
-utilizando dados do Banco Mundial (1990–2024).
+Evaluate whether the **Solow Model** can explain countries’ economic performance,
+using World Bank data (1990–2024).
 
-Três análises são realizadas para **dois recortes geográficos**:
+Three analyses are carried out for **two geographic groupings**:
 
-| # | Análise | Variável X | Variável Y | Referência |
-|---|---------|-----------|-----------|-----------|
-| 1 | Investimento e Renda | Formação Bruta de Capital (% PIB) – média 1990–2024 | PIB per capita PPP (corrente) | Mankiw Fig. 8-6 |
-| 2 | Convergência de Renda | PIB per capita PPP constante – 1990 | Crescimento médio PIB per capita – 1990–2017 | Blanchard Fig. 10.2 |
-| 3 | Crescimento Populacional e Renda | Crescimento populacional médio – 1990–2024 | PIB per capita PPP (corrente) | Mankiw Fig. 8-13 |
-
+|#| Analysis | X Variable | Y Variable | Reference |
+|-|------|----------------|----------------|---------|
+|1| Investment and Income | Gross Capital Formation (% GDP) – 1990–2024 average | GDP per capita PPP (current) | Mankiw Fig. 8-6 |
+|2| Income Convergence | GDP per capita PPP, constant – 1999 | Average GDP per capita growth – 1990–2017 | Blanchard Fig. 10.2|
+|3| Population Growth and Income | Average population growth – 1990–2024 | GDP per capita PPP (current) | Mankiw Fig. 8-13 |
 ---
 
-## Estrutura do Projeto
+## Project Structure
 
 ```
 solow_analysis/
 ├── data/
-│   └── world_data.xlsx          # Base de dados do Banco Mundial
+│   └── world_data.xlsx          # World Bank dataset
 ├── src/
-│   ├── data_loader.py           # Carga e pré-processamento dos dados
-│   ├── plots.py                 # Geração dos gráficos (ABNT)
-│   └── main.py                  # Script principal — executa todas as análises
+│   ├── data_loader.py           # Data loading preprocessing
+│   ├── plots.py                 # Chart generation (ABNT standart)
+│   └── main.py                  # Main script
 ├── outputs/
-│   ├── figures/                 # Gráficos gerados (PNG)
-│   └── tables/                  # Tabela de correlações (CSV)
+│   ├── figures/                 # Generated charts (PNG)
+│   └── tables/                  # Correlation table (CSV)
 ├── requirements.txt
 └── README.md
 ```
-
 ---
 
-## Como Executar
+## How to Run
 
-### 1. Instalar dependências
+### 1. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Rodar as análises (regiões padrão)
+### 2. Run anaysis
 
 ```bash
 python src/main.py
 ```
 
-### 3. Especificar regiões customizadas
+## Data
 
-```bash
-python src/main.py --regions "LATIN AMERICA AND CARIBBEAN" "EAST ASIAN AND PACIFIC"
-```
+Source: [World Data – World Development Indicators](https://data.worldbank.org/indicator)
 
----
-
-## Dados
-
-Fonte: [Banco Mundial – World Development Indicators](https://data.worldbank.org/indicator)
-
-| Variável | Código (ID) |
+| Variable | Code (ID) |
 |----------|-------------|
-| PIB per capita, PPP (current international $) | `NY.GDP.PCAP.PP.CD` |
-| Formação Bruta de Capital (% do PIB) | `NE.GDI.TOTL.ZS` |
-| Crescimento do PIB per capita (anual %) | `NY.GDP.PCAP.KD.ZG` |
-| PIB per capita, PPP (constant 2021 international $) | `NY.GDP.PCAP.PP.KD` |
-| Crescimento Populacional (anual %) | `SP.POP.GROW` |
+| GDP per capita, PPP (current international $) | `NY.GDP.PCAP.PP.CD` |
+| Gross Capital Formation (% of GDP) | `NE.GDI.TOTL.ZS` |
+| GDP per capita growth (anual %) | `NY.GDP.PCAP.KD.ZG` |
+| GDP per capita, PPP (constant 2021 international $) | `NY.GDP.PCAP.PP.KD` |
+| Populational Growth (anual %) | `SP.POP.GROW` |
 
 ---
 
 ## Outputs
 
-- **6 gráficos** (`outputs/figures/`) — nomeados `fig01_analysis1_latam.png`, etc.
-- **Tabela de correlações** (`outputs/tables/correlation_summary.csv`) com R² por análise e região.
+- **6 charts** (`outputs/figures/`) — named `fig01_analysis1_latam.png`, etc.
+- **Correlation table** (`outputs/tables/correlation_summary.csv`) with R² per analysis and region.
 
 ---
 
-## Dependências
+## Dependencies
 
-Ver `requirements.txt`. Principais: `pandas`, `matplotlib`, `scipy`, `adjustText`.
+See `requirements.txt`. Main ones: `pandas`, `matplotlib`, `scipy`, `adjustText`.
