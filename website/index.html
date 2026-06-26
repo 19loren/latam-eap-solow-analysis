@@ -10,6 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="data.js"></script>
+  
   <script>
     tailwind.config = {
       theme: {
@@ -37,7 +41,7 @@
   <header class="sticky top-0 z-50 bg-navy-900/95 text-white backdrop-blur">
     <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="#hero" class="font-serif text-lg tracking-wide">Solow Model Analysis</a>
-      <ul class=hidden md:flex gap-8 text-xs uppercase tracking-widest text-white/80>
+      <ul class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-white/80">
         <li><a href="#problem" class="hover:text-gold-400 transition-colors">Overview</a></li>
         <li><a href="#hypothesis-1" class="hover:text-gold-400 transition-colors">Hypothesis 1</a></li>
         <li><a href="#hypothesis-2" class="hover:text-gold-400 transition-colors">Hypothesis 2</a></li>
@@ -50,6 +54,7 @@
 
   <main>
 
+    <!-- hero -->
     <section id="hero" class="relative bg-navy-900 text-white min-h-screen flex flex-col items-center justify-center text-center px-6">
       <h1 class="font-serif text-5xl md:text-7xl tracking-wide mb-6">The Solow Model</h1>
       <p class="text-sm md:text-base text-gold-400 uppercase tracking-widest mb-2">A Comparative Analysis of</p>
@@ -61,9 +66,11 @@
       </div> 
     </section>
 
+    <!-- the problem -->
     <section id="problem" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-
+        
+        <!-- left column -->
         <div>
           <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">01</span>
           <h2 class="font-serif text-3xl text-navy-900 mb-6">The Problem</h2>
@@ -76,12 +83,14 @@
             Do the data support these predictions for LATAM and EAP?
           </p>
         </div>
-
+         
+        <!-- right column -->
         <div class="bg-stone-100 rounded-lg p-8 border border-stone-200">
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-6">What we test</p>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
 
             <div>
+            <!-- coin icon -->
               <svg class="w-8 h-8 mx-auto mb-3 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <ellipse cx="12" cy="6" rx="7" ry="3"/>
                 <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/>
@@ -92,6 +101,7 @@
             </div>
 
             <div>
+            <!-- convergence icon -->
               <svg class="w-8 h-8 mx-auto mb-3 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M4 12a8 8 0 0 1 14-5.3M20 4v3.5h-3.5"/>
                 <path d="M20 12a8 8 0 0 1-14 5.3M4 20v-3.5h3.5"/>
@@ -101,6 +111,7 @@
             </div>
 
             <div>
+            <!-- people icon -->
               <svg class="w-8 h-8 mx-auto mb-3 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <circle cx="9" cy="7" r="3"/>
                 <circle cx="17" cy="9" r="2.3"/>
@@ -117,14 +128,16 @@
       </div>
     </section>
  
+    <!-- regions --> 
     <section id="regions" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
       <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">02</span>
       <h2 class="font-serif text-3xl text-navy-900 mb-4">The Regions</h2>
       <p class="text-slate-600 mb-10 max-w-2xl">We compare two regions with different development trajectories.
       </p>
 
-      <<div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
+        <!-- LAC card -->
         <div class="border border-stone-200 rounded-lg overflow-hidden">
           <div class="h-1.5 bg-navy-900"></div>
           <div class="p-8">
@@ -136,7 +149,8 @@
             </ul>
           </div>
         </div>
-
+        
+        <!-- EAP card -->
         <div class="border border-stone-200 rounded-lg overflow-hidden">
           <div class="h-1.5 bg-gold-400"></div>
           <div class="p-8">
@@ -152,19 +166,22 @@
       </div>
     </section>
 
+    <!-- hypothesis 1 -->
     <section id="hypothesis-1" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
       <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">03</span>
-      <h2 class="font-serif text-3xl text-navy-900 mb-10">Hypothesis 1 - Investment and Income</<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <h2 class="font-serif text-3xl text-navy-900 mb-10">Hypothesis 1 - Investment and Income</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div class="border border-stone-200 rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-3">LATAM</p>
-          <div id="chart-1-latam" class="aspect-square bg-stone-50 rounded flex items-center justify-center text-xs text-slate-300">
-            chart goes here
+          <div class="aspect-square">
+            <canvas id="chart-1-latam"></canvas>
           </div>
         </div>
         <div class="border border-stone-200 rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-3">EAP</p>
-          <div id="chart-1-eap" class="aspect-square bg-stone-50 rounded flex items-center justify-center text-xs text-slate-300">
-            chart goes here
+          <div class="aspect-square">
+            <canvas id="chart-1-eap"></canvas>
           </div>
         </div>
       </div>
@@ -173,18 +190,22 @@
         <div class="bg-navy-900 text-white rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Correlation (r) - LATAM</p>
           <p class="font-serif text-3xl text-gold-400">0.51</p>
+          <p class="text-xs text-white/50 mb-3">p = 0.006 (one-tailed, n = 24)</p>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Supported</span>
         </div>
         <div class="bg-navy-900 text-white rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Correlation (r) - EAP</p>
           <p class="font-serif text-3xl text-gold-400">0.19</p>
+          <p class="text-xs text-white/50 mb-3">p = 0.166 (one-tailed, n = 27)</p>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-rose-500/15 text-rose-400">Not Supported</span>
         </div>
       </div>
       <p class="text-slate-600 text-sm mt-6">
-        Investment shows a moderate positive relationship with income in LATAM,
-        but only a weak one in EAP.
+      At α = 0.05 (one-tailed, since the model predicts the direction of the relationship), investment is significantly associated with income in LATAM but not in EAP. <strong class="text-navy-900">H1 is Supported for LATAM and Not Supported for EAP.</strong>
       </p>
     </section>
-
+     
+    <!-- hypothesis 2 -->
     <section id="hypothesis-2" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
       <span class="block text-gold-400 font-serif text-sm tacking-widest mb-2">04</span>
       <h2 class="font-serif text-3xl text-navy-900 mb-10">Hypothesis 2 - Income Convergence</h2>
@@ -192,14 +213,14 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div class="border border-stone-200 rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-3">LATAM</p>
-          <div id="chart-2-latam" class="aspect-square bg-stone-50 rounded flex items-center justify-center text-xs text-slate-300">
-            chart goes here
+          <div id="aspect-square">
+            <canvas id="chart-2-latam"></canvas>
           </div>
         </div>
         <div class="border border-stone-200 rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-3">EAP</p>
-          <div id="chart-2-eap" class="aspect-square bg-stone-50 rounded flex items-center justify-center text-xs text-slate-300">
-            chart goes here
+          <div class="aspect-square">
+            <canvas id="chart-2-eap"></canvas>
           </div>
         </div>
       </div>
@@ -208,18 +229,22 @@
         <div class="bg-navy-900 text-white rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Correlation (r) - LATAM</p>
           <p class="font-serif text-3xl text-gold-400">-0.48</p>
+          <p class="text-xs text-white/50 mb-3">p = 0.003 (one-tailed, n = 31)</p>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Supported</span>
         </div>
         <div class="bg-navy-900 text-white rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Correlation (r) - EAP</p>
           <p class="font-serif text-3xl text-gold-400">-0.34</p>
+          <p class="text-xs text-white/50 mb-3">p = 0.029 (one-tailed, n = 31)</p>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Supported</span>
         </div>
       </div>
       <p class="text-slate-600 text-sm mt-6">
-        Both regions show a negative relationship between initial income and
-        growth, consistent with convergence, and it is somewhat stronger in LATAM.
+      Both regions show a statistically significant negative relationship between initial income and growth, consistent with convergence. <strong class="text-navy-900">H2 is Supported for both LATAM and EAP.</strong>
       </p>
     </section>
 
+    <!-- hypothesis 3 -->
     <section id="hypothesis-3" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
     <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">05</span>
       <h2 class="font-serif text-3xl text-navy-900 mb-10">Hypothesis 3 - Population Growth and Income</h2>
@@ -227,14 +252,14 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div class="border border-stone-200 rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-3">LATAM</p>
-          <div id="chart-3-latam" class="aspect-square bg-stone-50 rounded flex items-center justify-center text-xs text-slate-300">
-            chart goes here
+          <div class="aspect-square">
+            <canvas id="chart-3-latam"></canvas>
           </div>
         </div>
         <div class="border border-stone-200 rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-slate-500 mb-3">EAP</p>
-          <div id="chart-3-eap" class="aspect-square bg-stone-50 rounded flex items-center justify-center text-xs text-slate-300">
-            chart goes here
+          <div class="aspect-square">
+            <canvas id="chart-3-eap"></canvas>
           </div>
         </div>
       </div>
@@ -243,18 +268,24 @@
         <div class="bg-navy-900 text-white rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Correlation (r) - LATAM</p>
           <p class="font-serif text-3xl text-gold-400">-0.37</p>
+          <p class="text-xs text-white/50 mb-3">p = 0.018 (one-tailed, n = 32)</p>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-emerald-500/15 text-emerald-400">Supported</span>
         </div>
         <div class="bg-navy-900 text-white rounded-lg p-6">
           <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Correlation (r) - EAP</p>
           <p class="font-serif text-3xl text-gold-400">0.13</p>
+          <p class="text-xs text-white/50 mb-3">p = 0.758 (one-tailed, n = 31)</p>
+          <span class="inline-block text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded bg-rose-500/15 text-rose-400">Not Supported</span>
+        </div>
         </div>
       </div>
       <p class="text-slate-600 text-sm mt-6">
-        In LATAM, lower population growth relates to higher income, as the model
-        predicts. In EAP the relationship is weak and points the other way.
+      In LATAM, lower population growth is significantly associated with higher income, as the model predicts. In EAP the relationship is not significant and points the wrong way. <strong class="text-navy-900">H3 is Supported for LATAM and Not Supported for EAP.</strong>
+      </p>
       </p>
     </section>
     
+    <!-- comparision -->
     <section id="comparison" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
       <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">06</span>
       <h2 class="font-serif text-3xl text-navy-900 mb-10">Comparing Regions</h2>
@@ -272,46 +303,90 @@
           <tbody class="divide-y divide-stone-200">
             <tr class="odd:bg-white even:bg-stone-50">
               <td class="px-6 py-4 text-slate-700">1. Investment and Income</td>
-              <td class="px-6 py-4 text-slate-700">r = 0.51</td>
-              <td class="px-6 py-4 text-slate-700">r = 0.19</td>
+              <td class="px-6 py-4 text-slate-700">r = 0.51 - <span class="text-emerald-600 font-medium">Supported</span></td>
+              <td class="px-6 py-4 text-slate-700">r = 0.19 - <span class="text-rose-600 font-medium">Not Supported</span></td>
             </tr>
             <tr class="odd:bg-white even:bg-stone-50">
               <td class="px-6 py-4 text-slate-700">2. Income Convergence</td>
-              <td class="px-6 py-4 text-slate-700">r = -0.48</td>
-              <td class="px-6 py-4 text-slate-700">r = -0.34</td>
+              <td class="px-6 py-4 text-slate-700">r = -0.48 - <span class="text-emerald-600 font-medium">Supported</span></td>
+              <td class="px-6 py-4 text-slate-700">r = -0.34 - <span class="text-emerald-600 font-medium">Supported</span></td>
             </tr>
             <tr class="odd:bg-white even:bg-stone-50">
               <td class="px-6 py-4 text-slate-700">3. Population Growth and Income</td>
-              <td class="px-6 py-4 text-slate-700">r = -0.37</td>
-              <td class="px-6 py-4 text-slate-700">r = 0.13</td>
+              <td class="px-6 py-4 text-slate-700">r = -0.37 - <span class="text-emerald-600 font-medium">Supported</span></td>
+              <td class="px-6 py-4 text-slate-700">r = 0.13 - <span class="text-rose-600 font-medium">Not Supported</span></td>
             </tr>
           </tbody>
         </table>
       </div>
+      <p class="text-xs text-slate-400 mt-3">
+        Verdict based on a one-tailed significance test (α = 0.05) against the direction predicted by the Solow Model.
+      </p>
     </section>
     
+    <!-- limitations -->
+    <section>
+      <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">07</span>
+      <h2 class="font-serif text-3xl text-navy-900 mb-10">Limitations</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="font-semibold text-navy-900 mb-2">Sample size</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            With 24–32 countries per test, statistical power is limited, especially for H1 in LATAM (n = 24), where missing investment data drops several countries from the regression.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-navy-900 mb-2">Country size is ignored</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Each country counts as one data point regardless of population. EAP spans China (~1.4B people) and Pacific microstates (under 50,000 people each), a 56x income-per-capita range vs. 25x in LATAM. This heterogeneity likely explains why EAP's relationships are weaker and noisier.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-navy-900 mb-2">Linear correlation only</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Pearson's r only captures straight-line relationships. Solow's diminishing returns imply some curvature near the steady state that a linear correlation could underestimate.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-navy-900 mb-2">Omitted variables &amp; causality</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            We don't control for human capital, technology (TFP) or institutions, all part of an extended Solow framework. Richer countries can also better afford investment, so causality could run in either direction.
+          </p>
+        </div>
+      </div>
+    </section>
+     
+    <!-- conclusion -->
     <section id="conclusion" class="max-w-7xl mx-auto px-6 py-20 border-t border-stone-200">
-    <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">07</span>
+    <span class="block text-gold-400 font-serif text-sm tracking-widest mb-2">08</span>
       <h2 class="font-serif text-3xl text-navy-900 mb-6">Does the Solow Model Hold?</h2>
 
       <p class="text-slate-600 leading-relaxed mb-10 max-w-3xl">
-        Our findings provide mixed but meaningful support for the Solow Model.
-        The strength of each relationship differs notably between regions, and
-        in this dataset LATAM shows clearer patterns than EAP.
+        The Solow Model holds across all three predictions in LATAM, but only one of three in EAP. Differences in regional composition (EAP spans a far wider range of income levels and includes both a massive economy (China) and several Pacific microstates) help explain why the relationships are noisier there (see Limitations).
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div class="border border-stone-200 rounded-lg p-6 text-center">
           <h3 class="font-semibold text-sm text-navy-900 mb-2">Investment and Income</h3>
-          <span class="inline-block text-xs uppercase tracking-widest text-gold-400 border border-gold-400/40 rounded-full px-3 py-1">---</span>
+          <div class="flex justify-center gap-2">
+            <span class="text-xs uppercase tracking-widest px-2 py-1 rounded bg-emerald-50 text-emerald-700">LATAM: Supported</span>
+            <span class="text-xs uppercase tracking-widest px-2 py-1 rounded bg-rose-50 text-rose-700">EAP: Not Supported</span>
+          </div>
         </div>
         <div class="border border-stone-200 rounded-lg p-6 text-center">
           <h3 class="font-semibold text-sm text-navy-900 mb-2">Income Convergence</h3>
-          <span class="inline-block text-xs uppercase tracking-widest text-emerald-600 border border-emerald-600/40 rounded-full px-3 py-1">Supported</span>
+          <div class="flex justify-center gap-2">
+            <span class="text-xs uppercase tracking-widest px-2 py-1 rounded bg-emerald-50 text-emerald-700">LATAM: Supported</span>
+            <span class="text-xs uppercase tracking-widest px-2 py-1 rounded bg-emerald-50 text-emerald-700">EAP: Supported</span>
+          </div>
         </div>
         <div class="border border-stone-200 rounded-lg p-6 text-center">
           <h3 class="font-semibold text-sm text-navy-900 mb-2">Population Growth and Income</h3>
-          <span class="inline-block text-xs uppercase tracking-widest text-gold-400 border border-gold-400/40 rounded-full px-3 py-1">---</span>
+          <div class="flex justify-center gap-2">
+            <span class="text-xs uppercase tracking-widest px-2 py-1 rounded bg-emerald-50 text-emerald-700">LATAM: Supported</span>
+            <span class="text-xs uppercase tracking-widest px-2 py-1 rounded bg-rose-50 text-rose-700">EAP: Not Supported</span>
+          </div>
         </div>
       </div>
     </section>
@@ -322,6 +397,103 @@
     <p>Solow Model Analysis - Comparative Macroeconomic Analysis 1990–2024</p>
     <p class="mt-1">Data: World Bank Open Data</p>
   </footer>
+  
+    <!-- charts -->
+  <script>
+
+    function linearRegression(points) {
+      const n = points.length;
+      const sumX = points.reduce((s, p) => s + p.x, 0);
+      const sumY = points.reduce((s, p) => s + p.y, 0);
+      const sumXY = points.reduce((s, p) => s + p.x * p.y, 0);
+      const sumXX = points.reduce((s, p) => s + p.x * p.x, 0);
+      const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+      const intercept = (sumY - slope * sumX) / n;
+      return { slope, intercept };
+    }
+
+    function makeScatterChart(canvasId, points, color, xLabel, yLabel) {
+      const { slope, intercept } = linearRegression(points);
+      const xs = points.map(p => p.x);
+      const xMin = Math.min(...xs);
+      const xMax = Math.max(...xs);
+      const trendLine = [
+        { x: xMin, y: intercept + slope * xMin },
+        { x: xMax, y: intercept + slope * xMax },
+      ];
+
+      new Chart(document.getElementById(canvasId), {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              data: points.map(p => ({ x: p.x, y: p.y })),
+              backgroundColor: color,
+              pointRadius: 4,
+              pointHoverRadius: 6,
+            },
+            {
+              type: 'line',
+              data: trendLine,
+              borderColor: '#999999',
+              borderDash: [6, 4],
+              borderWidth: 1.5,
+              pointRadius: 0,
+              fill: false,
+            },
+          ]
+        },
+        options: {
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              title: { display: true, text: xLabel, font: { size: 10 } },
+              ticks: { font: { size: 9 } },
+            },
+            y: {
+              title: { display: true, text: yLabel, font: { size: 10 } },
+              ticks: { font: { size: 9 } },
+            },
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              // only show a tooltip for country points, not the trend line
+              filter: (item) => item.datasetIndex === 0,
+              callbacks: {
+                // show the country name instead of just raw x/y numbers
+                label: (ctx) => {
+                  const p = points[ctx.dataIndex];
+                  return `${p.n}: (${p.x}, ${p.y})`;
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    const NAVY = '#0B1B2E';
+    const GOLD = '#C9A227';
+
+    // hypothesis 1 - investment (x) vs income (y)
+    makeScatterChart('chart-1-latam', CHART_DATA.latam.h1, NAVY,
+      'Gross Capital Formation (% of GDP)', 'GDP per capita, PPP ($)');
+    makeScatterChart('chart-1-eap', CHART_DATA.eap.h1, GOLD,
+      'Gross Capital Formation (% of GDP)', 'GDP per capita, PPP ($)');
+
+    // hypothesis 2 - initial income 1990 (x) vs growth (y)
+    makeScatterChart('chart-2-latam', CHART_DATA.latam.h2, NAVY,
+      'GDP per capita, 1990 ($)', 'Avg. annual GDP growth (%)');
+    makeScatterChart('chart-2-eap', CHART_DATA.eap.h2, GOLD,
+      'GDP per capita, 1990 ($)', 'Avg. annual GDP growth (%)');
+
+    // hypothesis 3 - population growth (x) vs income (y)
+    makeScatterChart('chart-3-latam', CHART_DATA.latam.h3, NAVY,
+      'Population growth (annual %)', 'GDP per capita, PPP ($)');
+    makeScatterChart('chart-3-eap', CHART_DATA.eap.h3, GOLD,
+      'Population growth (annual %)', 'GDP per capita, PPP ($)');
+  </script>
 
 </body>
 </html>
