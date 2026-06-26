@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solow Model Analysis -- LATAM & EAP</title>
+  <title>Solow Model Analysis - LATAM & EAP</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +12,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  
   <script src="data.js"></script>
   
   <script>
@@ -41,17 +42,50 @@
   <header class="sticky top-0 z-50 bg-navy-900/95 text-white backdrop-blur">
     <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="#hero" class="font-serif text-lg tracking-wide">Solow Model Analysis</a>
+      
       <ul class="hidden md:flex gap-8 text-xs uppercase tracking-widest text-white/80">
         <li><a href="#problem" class="hover:text-gold-400 transition-colors">Overview</a></li>
         <li><a href="#hypothesis-1" class="hover:text-gold-400 transition-colors">Hypothesis 1</a></li>
         <li><a href="#hypothesis-2" class="hover:text-gold-400 transition-colors">Hypothesis 2</a></li>
         <li><a href="#hypothesis-3" class="hover:text-gold-400 transition-colors">Hypothesis 3</a></li>
         <li><a href="#comparison" class="hover:text-gold-400 transition-colors">Comparison</a></li>
+        <li><a href="#limitations" class="hover:text-gold-400 transition-colors">Limitations</a></li>
         <li><a href="#conclusion" class="hover:text-gold-400 transition-colors">Conclusion</a></li>
       </ul>
+      
+      <button id="menu-toggle" class="md:hidden text-white" aria-label="Open menu">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg> 
+      </button>
     </nav>
+    
+    <!-- mobile menu -->
+    <ul id="mobile-menu" class="hidden md:hidden fixed top-16 inset-x-0 z-50 flex-col px-6 pb-4 text-sm uppercase tracking-widest text-white/80 bg-navy-900 border-t border-white/10 max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <li><a href="#problem" class="block py-2 hover:text-gold-400">Overview</a></li>
+      <li><a href="#hypothesis-1" class="block py-2 hover:text-gold-400">Hypothesis 1</a></li>
+      <li><a href="#hypothesis-2" class="block py-2 hover:text-gold-400">Hypothesis 2</a></li>
+      <li><a href="#hypothesis-3" class="block py-2 hover:text-gold-400">Hypothesis 3</a></li>
+      <li><a href="#comparison" class="block py-2 hover:text-gold-400">Comparison</a></li>
+      <li><a href="#limitations" class="block py-2 hover:text-gold-400">Limitations</a></li>
+      <li><a href="#conclusion" class="block py-2 hover:text-gold-400">Conclusion</a></li>
+    </ul>
   </header>
+  
+  <script>
+    // toggle the mobile menu open/closed when the hamburger is tapped
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
 
+    // close the menu automatically after tapping any link inside it
+    document.querySelectorAll('#mobile-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
+  
   <main>
 
     <!-- hero -->
